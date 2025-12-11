@@ -1,71 +1,63 @@
-{
-border-radius: 8px;
-cursor: pointer;
-transition: 0.2s;
-}
-.btn:hover { opacity: 0.85; }
+document.addEventListener("DOMContentLoaded", () => {
+window.addEventListener('scroll', revealOnScroll);
+revealOnScroll();
 
 
-.card {
-background: #f0f0f0;
-padding: 30px;
-border-radius: 12px;
-text-align: center;
+/* PARALLAX */
+const decor = document.querySelector('.hero-decor');
+window.addEventListener('mousemove', e => {
+if(decor){
+const x = (e.clientX / window.innerWidth - 0.5) * 30;
+const y = (e.clientY / window.innerHeight - 0.5) * 30;
+decor.style.transform = `translate(${x}px, ${y}px) rotate(-6deg)`;
 }
+});
 
 
-.slider { position: relative; }
-.slide {
-display: none;
-padding: 40px;
-background: #ececec;
-border-radius: 8px;
-text-align: center;
-}
-.slide:first-child { display: block; }
-.prev, .next {
-position: absolute;
-top: 50%; transform: translateY(-50%);
-background: #6a5af9;
-color: #fff;
-border: none;
-padding: 10px 15px;
-border-radius: 6px;
-cursor: pointer;
-}
-.prev { left: -50px; }
-.next { right: -50px; }
+/* MODAL */
+const modal = document.getElementById('modal');
+const openBtns = document.querySelectorAll('.open-modal');
+const closeBtn = document.querySelector('.modal-close');
+openBtns.forEach(btn => btn.addEventListener('click', () => modal.classList.add('active')));
+closeBtn.addEventListener('click', () => modal.classList.remove('active')));
+modal.addEventListener('click', e => { if(e.target === modal) modal.classList.remove('active'); });
 
 
-.form input, .form textarea {
-width: 100%;
-padding: 12px;
-margin-bottom: 12px;
-border-radius: 6px;
-border: 1px solid #ccc;
-}
+/* EMAILJS */
+emailjs.init("YOUR_PUBLIC_KEY"); // ⚠️ сюда вставь Public Key
 
 
-.modal {
-display: none;
-position: fixed;
-top: 0; left: 0; width: 100%; height: 100%;
-background: rgba(0,0,0,0.6);
-justify-content: center;
-align-items: center;
-}
-.modal.active { display: flex; }
-.modal-content {
-background: #fff;
-padding: 25px;
-border-radius: 12px;
-position: relative;
-}
-.modal-close {
-position: absolute;
-top: 10px; right: 10px;
-background: none;
-border: none;
-font-size: 22px;
-cursor: pointer;
-}
+const sendForm = (form) => {
+form.addEventListener('submit', e => {
+e.preventDefault();
+emailjs.send("service_fg0zlhc", "template_wx26y4q", {
+name: form.name.value,
+phone: form.phone.value,
+message: form.message.value
+}).then(() => {
+alert('Заявка отправлена!');
+form.reset();
+modal.classList.remove('active');
+});
+});
+};
+
+
+const modalForm = document.getElementById('modalForm');
+const contactForm = document.getElementById('contactForm');
+if(modalForm) sendForm(modalForm);
+if(contactForm) sendForm(contactForm);
+
+
+/* SLIDER */
+document.querySelectorAll('.slider').forEach(slider => {
+const slides = slider.querySelectorAll('.slide');
+let current = 0;
+const next = slider.querySelector('.next');
+const prev = slider.querySelector('.prev');
+const show = i => slides.forEach((s,k)=> s.style.display = k===i ? 'block' : 'none');
+show(current);
+next.addEventListener('click', () => { current = (current+1)%slides.length; show(current); });
+prev.addEventListener('click', () => { current = (current-1+slides.length)%slides.length; show(current); });
+});
+});
