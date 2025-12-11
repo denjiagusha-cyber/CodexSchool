@@ -1,239 +1,71 @@
-/* ===================================================================
-   assets/css/style.css
-   CODEX SCHOOL — премиум стиль
-=================================================================== */
+{
+border-radius: 8px;
+cursor: pointer;
+transition: 0.2s;
+}
+.btn:hover { opacity: 0.85; }
 
-/* ------------------------
-   RESET / BASE
------------------------- */
-*,
-*::before,
-*::after { box-sizing: border-box; margin:0; padding:0; }
-html, body { height:100%; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-body { line-height:1.5; background:#030312; color:#e9f2ff; transition: 0.3s all; }
 
-/* ------------------------
-   CONTAINERS
------------------------- */
-.container { max-width:1180px; margin:0 auto; padding:0 20px; }
-
-/* ------------------------
-   TYPOGRAPHY
------------------------- */
-h1,h2,h3,h4 { font-weight:700; margin-bottom:12px; color:#e9f2ff; }
-p { margin-bottom:12px; color:rgba(230,238,248,0.78); }
-
-/* ------------------------
-   HEADER
------------------------- */
-.header { position:sticky; top:0; padding:12px 0; backdrop-filter:blur(6px); z-index:99; }
-.header-inner { display:flex; justify-content:space-between; align-items:center; }
-.logo { font-weight:900; font-size:1.05rem; color:#e9f2ff; }
-.logo span { background: linear-gradient(90deg,#5DE0FF,#7B5CFF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-/* ===========================
-   БЛОКИ / СЕКЦИИ
-=========================== */
-section {
-  padding: 80px 0; /* верхний и нижний отступ для каждой секции */
-  position: relative;
+.card {
+background: #f0f0f0;
+padding: 30px;
+border-radius: 12px;
+text-align: center;
 }
 
-/* Если нужно, можно уменьшить для мобильных */
-@media (max-width: 768px) {
-  section {
-    padding: 60px 0;
-  }
+
+.slider { position: relative; }
+.slide {
+display: none;
+padding: 40px;
+background: #ececec;
+border-radius: 8px;
+text-align: center;
+}
+.slide:first-child { display: block; }
+.prev, .next {
+position: absolute;
+top: 50%; transform: translateY(-50%);
+background: #6a5af9;
+color: #fff;
+border: none;
+padding: 10px 15px;
+border-radius: 6px;
+cursor: pointer;
+}
+.prev { left: -50px; }
+.next { right: -50px; }
+
+
+.form input, .form textarea {
+width: 100%;
+padding: 12px;
+margin-bottom: 12px;
+border-radius: 6px;
+border: 1px solid #ccc;
 }
 
-/* NAVIGATION */
-.nav { display:flex; gap:18px; }
-.nav a { color:rgba(230,238,248,0.78); text-decoration:none; font-weight:600; padding:6px 10px; border-radius:10px; transition:0.2s; }
-.nav a:hover { color:#5DE0FF; transform:translateY(-2px); }
 
-/* BURGER */
-.burger { display:none; width:44px; height:36px; border-radius:10px; background:#071026; border:1px solid rgba(255,255,255,0.05); padding:6px; cursor:pointer; align-items:center; justify-content:center; }
-.burger span, .burger span::before, .burger span::after { display:block; height:2px; width:18px; background:linear-gradient(90deg,#5DE0FF,#7B5CFF); border-radius:2px; position:relative; }
-.burger span::before { content:""; position:absolute; top:-6px; }
-.burger span::after { content:""; position:absolute; top:6px; }
-
-/* ------------------------
-   HERO
------------------------- */
-.hero { padding:60px 0; position:relative; display:flex; align-items:center; overflow:hidden; }
-.hero .container { display:flex; flex-direction:column; gap:20px; }
-.hero-badge { display:inline-block; padding:6px 10px; border-radius:999px; font-weight:700; font-size:0.85rem; background:linear-gradient(90deg,#5DE0FF,#7B5CFF); color:#fff; margin-bottom:12px; }
-.hero-title { font-size:clamp(1.6rem,3.6vw,2.6rem); line-height:1.1; margin-bottom:10px; }
-.hero-subtitle { font-size:1rem; max-width:68ch; color:rgba(230,238,248,0.65); margin-bottom:16px; }
-.btn { display:inline-flex; align-items:center; gap:10px; border:none; cursor:pointer; padding:10px 16px; border-radius:12px; font-weight:800; font-size:0.95rem; transition:0.2s; }
-.primary-btn { background:linear-gradient(90deg,#5DE0FF,#7B5CFF); color:white; box-shadow:0 14px 40px rgba(90,85,255,0.12); }
-.primary-btn:hover { transform:translateY(-4px); }
-
-/* HERO DECOR */
-.hero-decor { position:absolute; right:-6%; top:8%; width:420px; height:260px; background:conic-gradient(from 160deg at 50% 50%, rgba(91,85,255,0.36), rgba(93,224,255,0.24)); filter:blur(30px); border-radius:24px; transform:rotate(-6deg); pointer-events:none; }
-
-/* ------------------------
-   COURSES
------------------------- */
-.courses-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:14px; }
-.course-card { background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.05); padding:14px; border-radius:14px; box-shadow:0 18px 50px rgba(2,8,23,0.45); transition:0.25s; }
-.course-card:hover { transform:translateY(-8px) rotateX(1deg); box-shadow:0 30px 80px rgba(6,12,40,0.6); }
-.course-card h3 { margin-bottom:8px; font-size:1rem; color:#e9f2ff; }
-.course-card p { color:rgba(230,238,248,0.55); font-size:0.95rem; }
-
-/* ------------------------
-   PRICES
------------------------- */
-.price-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:14px; }
-.price-card { padding:14px; border-radius:14px; background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.05); box-shadow:0 8px 30px rgba(2,8,23,0.35); text-align:center; }
-.price-card h3 { font-size:1rem; margin-bottom:6px; color:#e9f2ff; }
-.price { font-weight:900; font-size:1.05rem; color:#5DE0FF; }
-.price.free { color:#fff; background:linear-gradient(90deg,#FF7A7A,#FFB86B); display:inline-block; padding:6px 10px; border-radius:999px; }
-.price-card.highlight { transform:translateY(-6px); border:1px solid rgba(123,92,255,0.16); box-shadow:0 28px 80px rgba(91,85,255,0.12); }
-
-/* ------------------------
-   SCHEDULE
------------------------- */
-.schedule-wrapper { margin-top:12px; display:flex; gap:18px; flex-wrap:wrap; }
-.schedule-location { flex:1 1 420px; background:rgba(255,255,255,0.02); padding:14px; border-radius:14px; border:1px solid rgba(255,255,255,0.05); box-shadow:0 18px 50px rgba(2,8,23,0.45); }
-.schedule-location h3 { font-size:1.05rem; margin-bottom:6px; color:#5DE0FF; }
-.schedule-block { margin-top:12px; }
-.schedule-block h4 { font-size:0.95rem; margin-bottom:8px; color:rgba(230,238,248,0.55); }
-.schedule-block ul { list-style:none; padding:0; display:grid; gap:6px; }
-.schedule-block li { display:flex; justify-content:space-between; align-items:center; padding:6px 10px; border-radius:10px; background:rgba(255,255,255,0.01); border:1px solid rgba(255,255,255,0.03); color:rgba(230,238,248,0.55); font-weight:700; font-size:0.9rem; }
-
-/* ------------------------
-   ABOUT
------------------------- */
-.about-text { margin-top:12px; color:rgba(230,238,248,0.55); max-width:72ch; }
-
-/* ------------------------
-   CONTACTS
------------------------- */
-.contacts-grid { display:grid; grid-template-columns:1fr 440px; gap:18px; margin-top:12px; }
-.contacts-info p { margin:6px 0; color:rgba(230,238,248,0.55); }
-.contacts-map iframe { width:100%; height:260px; border:1px solid rgba(255,255,255,0.05); border-radius:12px; }
-.contact-form { margin-top:16px; display:flex; flex-direction:column; gap:10px; max-width:480px; }
-.contact-form input, .contact-form textarea { padding:10px 12px; border-radius:10px; border:1px solid rgba(255,255,255,0.05); background:rgba(255,255,255,0.01); color:#e9f2ff; font-size:0.95rem; outline:none; }
-.contact-form textarea { min-height:110px; resize:vertical; }
-.contact-form .primary-btn { width:fit-content; padding:10px 18px; }
-
-/* ------------------------
-   MODAL
------------------------- */
-/* ===========================
-   ПРЕМИУМ МОДАЛЬНОЕ ОКНО
-=========================== */
 .modal {
-  position: fixed;
-  top:0; left:0; width:100%; height:100%;
-  background: rgba(3,3,18,0.7);
-  backdrop-filter: blur(8px);
-  display:flex; align-items:center; justify-content:center;
-  opacity:0; pointer-events:none; transition:opacity 0.4s ease;
-  z-index:100;
+display: none;
+position: fixed;
+top: 0; left: 0; width: 100%; height: 100%;
+background: rgba(0,0,0,0.6);
+justify-content: center;
+align-items: center;
 }
-.modal.active { opacity:1; pointer-events:all; }
-
+.modal.active { display: flex; }
 .modal-content {
-  background: rgba(8,8,32,0.95);
-  padding:32px 36px;
-  border-radius:24px;
-  max-width:440px; width:90%;
-  text-align:center;
-  box-shadow: 0 16px 40px rgba(93,224,255,0.35);
-  transform: translateY(-30px);
-  opacity: 0;
-  transition: all 0.4s ease;
+background: #fff;
+padding: 25px;
+border-radius: 12px;
+position: relative;
 }
-.modal.active .modal-content {
-  transform: translateY(0);
-  opacity: 1;
-}
-
 .modal-close {
-  position:absolute; top:16px; right:16px;
-  font-size:1.8rem;
-  cursor:pointer;
-  color:#5DE0FF;
-  transition: transform 0.3s, color 0.3s;
+position: absolute;
+top: 10px; right: 10px;
+background: none;
+border: none;
+font-size: 22px;
+cursor: pointer;
 }
-.modal-close:hover {
-  transform: rotate(90deg);
-  color: #7B5CFF;
-}
-
-.modal-content h3 {
-  font-size:1.6rem;
-  margin-bottom:20px;
-  color:#5DE0FF;
-  font-weight:700;
-}
-
-.modal-content input,
-.modal-content textarea {
-  width:100%;
-  padding:14px 16px;
-  margin-bottom:14px;
-  border-radius:16px;
-  border:none;
-  background: rgba(255,255,255,0.05);
-  color:#e9f2ff;
-  font-size:1rem;
-  outline:none;
-  box-shadow: inset 0 0 8px rgba(93,224,255,0.1);
-  transition: all 0.3s;
-}
-.modal-content input:focus,
-.modal-content textarea:focus {
-  box-shadow: 0 0 12px #5DE0FF88;
-}
-
-.modal-content .btn.primary-btn {
-  width:100%;
-  padding:14px 0;
-  border-radius:16px;
-  font-weight:700;
-  font-size:1rem;
-  background: linear-gradient(90deg,#5DE0FF,#7B5CFF);
-  color:white;
-  border:none;
-  cursor:pointer;
-  transition: all 0.3s;
-}
-.modal-content .btn.primary-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 16px 32px rgba(93,224,255,0.5);
-}
-
-.form-success {
-  display:none;
-  margin-top:16px;
-  color:#5DE0FF;
-  font-weight:700;
-  font-size:1rem;
-  animation: fadeIn 0.5s ease forwards;
-}
-
-/* Анимация появления текста */
-@keyframes fadeIn {
-  from { opacity:0; transform:translateY(-10px);}
-  to { opacity:1; transform:translateY(0);}
-}
-
-/* ------------------------
-   FOOTER
------------------------- */
-.footer { padding:22px 0; margin-top:28px; border-top:1px solid rgba(255,255,255,0.05); color:rgba(230,238,248,0.55); text-align:center; }
-
-/* ------------------------
-   REVEAL
------------------------- */
-.reveal { opacity:0; transform:translateY(10px); transition: all 0.56s cubic-bezier(.2,.9,.3,1); }
-.reveal.is-visible { opacity:1; transform:translateY(0); }
-
-/* ------------------------
-   RESPONSIVE
------------------------- */
-@media (max-width:1100px) { .courses-grid { grid-template-columns:repeat(3,1fr); } .contacts-grid { grid-template-columns:1fr; } }
-@media (max-width:840px) { .courses-grid { grid-template-columns:repeat(2,1fr); } .price-grid { grid-template-columns:repeat(2,1fr); } .nav{display:none;} .burger{display:flex;} }
-@media (max-width:520px) { .courses-grid,.price-grid{grid-template-columns:1fr;} .hero-title{font-size:1.45rem;} }
