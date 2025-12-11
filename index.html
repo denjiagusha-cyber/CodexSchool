@@ -1,158 +1,59 @@
 <!DOCTYPE html>
-<html lang="ru" class="theme-dark">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CODEX SCHOOL — школа программирования</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<header class="header">
-    <div class="container">
-        <div class="header-inner">
-            <div class="logo">CODEX <span>SCHOOL</span></div>
-            <nav class="nav">
-                <a href="#courses">Курсы</a>
-                <a href="#prices">Абонементы</a>
-                <a href="#schedule">Расписание</a>
-                <a href="#about">О школе</a>
-                <a href="#contacts">Контакты</a>
-            </nav>
-            <button class="burger"><span></span></button>
-            <div class="theme-toggle" id="themeToggle"></div>
-        </div>
-    </div>
-</header>
-
-<section class="hero">
-    <div class="container">
-        <div class="hero-content">
-            <div class="hero-badge">Оффлайн школа</div>
-            <h1 class="hero-title">CODEX SCHOOL — школа программирования нового поколения</h1>
-            <p class="hero-subtitle">Современные методики, опытные преподаватели и мощные программы обучения для детей и подростков.</p>
-            <button class="btn primary-btn open-modal">Записаться на консультацию</button>
-        </div>
-    </div>
-    <div class="hero-decor"></div>
+<div class="services-grid">
+<div class="card">Курсы IT</div>
+<div class="card">Программирование</div>
+<div class="card">Мастер‑классы</div>
+</div>
 </section>
 
-<section class="courses" id="courses">
-    <div class="container">
-        <h2 class="section-title">Наши курсы</h2>
-        <div class="courses-grid">
-            <div class="course-card"><h3>Python</h3><p>Изучение базового и продвинутого Python через проекты.</p></div>
-            <div class="course-card"><h3>Tinkercad</h3><p>3D-моделирование и инженерное мышление для детей.</p></div>
-            <div class="course-card"><h3>Scratch</h3><p>Игры и мультики для самых юных программистов.</p></div>
-            <div class="course-card"><h3>HTML / CSS</h3><p>Создание сайтов с нуля, верстка, макеты, дизайн.</p></div>
-            <div class="course-card"><h3>JavaScript</h3><p>Интерактивные сайты, логика, динамика, мини-проекты.</p></div>
-            <div class="course-card"><h3>Bootstrap</h3><p>Быстрая адаптивная верстка на фреймворке.</p></div>
-            <div class="course-card"><h3>jQuery</h3><p>Ускоренная работа с интерфейсами и анимациями.</p></div>
-            <div class="course-card"><h3>Django</h3><p>Создание полноценных веб-приложений на Python.</p></div>
-        </div>
-    </div>
+
+<!-- GALLERY -->
+<section id="gallery" class="section container reveal">
+<h2>Галерея</h2>
+<div class="slider">
+<div class="slide">Фото 1</div>
+<div class="slide">Фото 2</div>
+<div class="slide">Фото 3</div>
+<button class="prev">‹</button>
+<button class="next">›</button>
+</div>
 </section>
 
-<section class="prices" id="prices">
-    <div class="container">
-        <h2 class="section-title">Абонементы</h2>
-        <div class="price-grid">
-            <div class="price-card"><h3>1 раз в неделю</h3><div class="price">16.000 тг / 4 урока</div></div>
-            <div class="price-card"><h3>2 раза в неделю</h3><div class="price">32.000 тг / 8 уроков</div></div>
-            <div class="price-card highlight"><h3>1 урок для новых гостей</h3><div class="price free">БЕСПЛАТНО</div></div>
-        </div>
-    </div>
+
+<!-- CONTACTS -->
+<section id="contacts" class="section container reveal">
+<h2>Контакты</h2>
+<form id="contactForm" class="form">
+<input type="text" name="name" placeholder="Ваше имя" required />
+<input type="text" name="phone" placeholder="Телефон" required />
+<textarea name="message" placeholder="Сообщение"></textarea>
+<button class="btn">Отправить</button>
+</form>
 </section>
 
-<section class="schedule" id="schedule">
-    <div class="container">
-        <h2 class="section-title">Наше расписание</h2>
-        <div class="schedule-wrapper">
-            <div class="schedule-location">
-                <h3>УЛ. 1</h3>
-                <div class="schedule-block">
-                    <h4>Понедельник — Пятница</h4>
-                    <ul>
-                        <li><span>1 урок</span><span>9:00 – 10:30</span></li>
-                        <li><span>2 урок</span><span>10:30 – 12:00</span></li>
-                        <li><span>3 урок</span><span>14:15 – 15:45</span></li>
-                        <li><span>4 урок</span><span>15:45 – 17:15</span></li>
-                        <li><span>5 урок</span><span>17:15 – 18:45</span></li>
-                    </ul>
-                </div>
-                <div class="schedule-block">
-                    <h4>Суббота — Воскресенье</h4>
-                    <ul>
-                        <li><span>1 урок</span><span>10:30 – 12:00</span></li>
-                        <li><span>2 урок</span><span>12:00 – 13:30</span></li>
-                        <li><span>3 урок</span><span>14:30 – 16:00</span></li>
-                        <li><span>4 урок</span><span>16:00 – 17:30</span></li>
-                        <li><span>5 урок</span><span>17:30 – 19:00</span></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
-<section class="about" id="about">
-    <div class="container">
-        <h2 class="section-title">О школе</h2>
-        <p class="about-text">
-            CODEX SCHOOL — команда опытных преподавателей, обучающих детей программированию через практику, проекты и современные технологии.
-        </p>
-    </div>
-</section>
+<!-- THEME SWITCH -->
+<button id="themeToggle" class="theme-toggle">Тема</button>
 
-<section class="contacts" id="contacts">
-    <div class="container">
-        <h2 class="section-title">Контакты</h2>
-        <div class="contacts-grid">
-            <div class="contacts-info">
-                <p><strong>Адрес:</strong> Улица 1, город</p>
-                <p><strong>Телефон:</strong> +7 (777) 000-00-00</p>
-                <p><strong>График:</strong> Пн–Вс • 9:00–20:00</p>
-            </div>
-            <div class="contacts-map">
-                <iframe src="https://maps.google.com/maps?q=almaty&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-            </div>
-        </div>
 
-        <form class="contact-form" id="contactForm">
-            <h3>Написать нам</h3>
-            <input type="text" name="name" placeholder="Ваше имя" required>
-            <input type="tel" name="phone" placeholder="Телефон" required>
-            <textarea name="message" placeholder="Сообщение" required></textarea>
-            <button type="submit" class="btn primary-btn">Отправить</button>
-        </form>
-    </div>
-</section>
-
-<footer class="footer">
-    <div class="container">
-        <p>© CODEX SCHOOL, 2025</p>
-    </div>
-</footer>
-
-<div class="modal" id="modal">
-    <div class="modal-content">
-        <span class="modal-close">&times;</span>
-        <h3>Записаться на консультацию</h3>
-        <form id="modalForm">
-            <input type="text" name="name" placeholder="Ваше имя" required>
-            <input type="tel" name="phone" placeholder="Телефон" required>
-            <textarea name="message" placeholder="Сообщение"></textarea>
-            <button type="submit" class="btn primary-btn">Отправить</button>
-        </form>
-    </div>
+<!-- MODAL -->
+<div id="modal" class="modal">
+<div class="modal-content">
+<button class="modal-close">×</button>
+<h3>Оставить заявку</h3>
+<form id="modalForm" class="form">
+<input type="text" name="name" placeholder="Ваше имя" required />
+<input type="text" name="phone" placeholder="Телефон" required />
+<textarea name="message" placeholder="Сообщение"></textarea>
+<button class="btn">Отправить</button>
+</form>
+</div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script>
-    (function(){ emailjs.init("YOUR_USER_ID"); })();
-</script>
-<script src="script.js"></script>
 
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
 
